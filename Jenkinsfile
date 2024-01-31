@@ -9,8 +9,8 @@ pipeline {
         }
         stage('build image') {
             steps {
-                sh '''cd /var/lib/jenkins/workspace/git-test
-                      docker build -t test .'''
+                sh '''sudo cd /var/lib/jenkins/workspace/git-test
+                     sudo docker build -t test .'''
             }
         }
         // stage('Deploy') {
