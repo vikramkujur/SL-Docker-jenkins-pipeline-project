@@ -7,11 +7,12 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/vikramkujur/SL-Docker-jenkins-pipeline-project.git'
             }
         }
-        // stage('Test') {
-        //     steps {
-        //         echo 'Testing..'
-        //     }
-        // }
+        stage('build image') {
+            steps {
+                sh '''cd /var/lib/jenkins/workspace/git-test
+                      docker build -t test .'''
+            }
+        }
         // stage('Deploy') {
         //     steps {
         //         echo 'Deploying....'
